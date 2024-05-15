@@ -129,4 +129,5 @@ def download_audio(filename):
     return send_from_directory(AUDIO_DIR, filename)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=1001)
+    port = int(os.environ.get('PORT', 1001))
+    app.run(debug=True, port=port)
